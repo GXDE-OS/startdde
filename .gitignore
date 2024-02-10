@@ -1,0 +1,33 @@
+/*.gitignore*/
+
+startdde
+splash_dev_test.go
+
+# test
+*.test
+test_main.go
+
+# temporary
+core
+try/
+*~
+*.orig
+.tag*
+tags
+cscope*
+*.sw[po]
+*.log
+*.pyc
+
+# diloagUI
+dialogUI/build/
+dialogUI/resources/shutdown/js/powerchoosedialog.js
+dialogUI/resources/shutdown/js/shutdowndialog.js
+dialogUI/resources/shutdown/js/rebootdialog.js
+dialogUI/resources/shutdown/js/logoutdialog.js
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt

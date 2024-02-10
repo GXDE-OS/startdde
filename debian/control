@@ -1,0 +1,39 @@
+Source: startdde
+Section: admin
+Priority: extra
+Maintainer: Deepin Packages Builder <packages@deepin.com>
+Build-Depends: debhelper (>= 9), pkg-config, golang-go,
+ golang-dlib-dev (>> 1.8.0+),
+ golang-github-linuxdeepin-go-x11-client-dev (>= 0.0.4),
+ dde-api-dev(>> 3.16.0+),
+ golang-github-linuxdeepin-go-dbus-factory-dev (>> 0.6.0+),
+ golang-github-smartystreets-goconvey-dev,
+ golang-gopkg-check.v1-dev,
+ libgnome-keyring-dev,
+ libxfixes-dev,
+ libxcursor-dev,
+ jq
+Standards-Version: 3.9.5
+Homepage: http://github.com/linuxdeepin/startdde
+
+Package: startdde
+Architecture: any
+Provides: x-session-manager
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ dde-daemon (>> 3.24.1+),
+ gnome-keyring,
+ libpam-gnome-keyring,
+ gvfs-bin,
+ deepin-wm | deepin-metacity | dde-kwin,
+ deepin-desktop-schemas (>= 3.2.4),
+ libgnome2-bin,
+ dde-api,
+ libgnome-keyring0,
+ libxfixes3,
+ libxcursor1
+Recommends: dde-qt5integration
+Conflicts: deepin-session, deepin-wm-switcher
+Breaks: startdde(<= 2.91.1)
+Description: start deepin desktop environment
+ starter of deepin desktop environment.
