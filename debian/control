@@ -30,7 +30,8 @@ Depends: ${shlibs:Depends},
  dde-api,
  libgnome-keyring0,
  libxfixes3,
- libxcursor1
+ libxcursor1,
+ lightdm
 Recommends: dde-qt5integration
 Conflicts: deepin-session, deepin-wm-switcher
 Breaks: startdde(<= 2.91.1)
