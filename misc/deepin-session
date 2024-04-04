@@ -2,7 +2,7 @@
 #
 # LightDM wrapper to run around X sessions.
 
-if [ "$1" != "/usr/bin/startdde" ]; then
+if [[ "$1" != "/usr/bin/startdde" ]] && [[ "$1" != "/usr/bin/startdde_wayland" ]]; then
 	exec /usr/sbin/lightdm-session $@
 fi
 

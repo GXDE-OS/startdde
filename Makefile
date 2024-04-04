@@ -34,8 +34,11 @@ test: prepare
 install:
 	install -Dm755 startdde ${DESTDIR}${PREFIX}/bin/startdde
 	mkdir -p ${DESTDIR}${PREFIX}/share/xsessions
+	mkdir -p ${DESTDIR}${PREFIX}/share/wayland-sessions
 	@for i in $(shell ls misc/xsessions/ | grep -E '*.in$$' );do sed 's|@PREFIX@|$(PREFIX)|g' misc/xsessions/$$i > ${DESTDIR}${PREFIX}/share/xsessions/$${i%.in}; done
+	@for i in $(shell ls misc/wayland-sessions/ | grep -E '*.in$$' );do sed 's|@PREFIX@|$(PREFIX)|g' misc/wayland-sessions/$$i > ${DESTDIR}${PREFIX}/share/wayland-sessions/$${i%.in}; done
 	install -Dm755 misc/deepin-session ${DESTDIR}${PREFIX}/sbin/deepin-session
+	install -Dm755 misc/startdde_wayland ${DESTDIR}${PREFIX}/bin/startdde_wayland
 	install -Dm755 fix-xauthority-perm ${DESTDIR}${PREFIX}/sbin/deepin-fix-xauthority-perm
 	install -Dm644 misc/lightdm.conf ${DESTDIR}${PREFIX}/share/lightdm/lightdm.conf.d/60-deepin.conf
 	mkdir -p ${DESTDIR}${PREFIX}/share/startdde/
