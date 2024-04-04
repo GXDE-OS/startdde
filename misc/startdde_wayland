@@ -1,5 +1,4 @@
 #!/bin/bash
-echo aaa > /tmp/b
 export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_TYPE=wayland
 export WAYLAND_DISPLAY=wayland-0
