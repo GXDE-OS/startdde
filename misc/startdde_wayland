@@ -4,8 +4,7 @@ export QT_QPA_PLATFORM=wayland
 export XDG_SESSION_TYPE=wayland
 export WAYLAND_DISPLAY=wayland-0
 export DISPLAY=:0
-kwin_wayland --drm --xwayland &
+deepin-kwin_wayland --drm --xwayland &
 sleep 5
-ls /tmp/.X11-unix > /tmp/d.txt
-startdde > /tmp/a.txt
-killall kwin_wayland
+startdde
+killall deepin-kwin_wayland
