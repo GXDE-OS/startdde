@@ -34,6 +34,8 @@ import (
 	"pkg.deepin.io/lib/gsettings"
 	"pkg.deepin.io/lib/log"
 	"pkg.deepin.io/lib/proxy"
+
+	wl_display "pkg.deepin.io/dde/startdde/wl_display"
 )
 
 var logger = log.NewLogger("startdde")
@@ -47,6 +49,8 @@ var globalCgExecBin string
 var globalWmChooserLaunched bool
 
 var globalXSManager *xsettings.XSManager
+
+var _useWayland bool
 
 func reapZombies() {
 	// We must reap children process even we hasn't create anyone at this moment,
@@ -90,7 +94,25 @@ func main() {
 	}
 	proxy.SetupProxy()
 
-	err = display.Start()
+	if os.Getenv("WAYLAND_DISPLAY") != "" {
+		logger.Info("in wayland mode")
+		_useWayland = true
+		// 相比于 X11 环境，在 Wayland 环境下，先于启动核心组件之前启动了 wl_display 模块。
+		err = wl_display.Start()
+		if err != nil {
+			logger.Warning(err)
+		}
+		recommendedScaleFactor = wl_display.GetRecommendedScaleFactor()
+	}
+	else {
+		// 使用 X11 环境时, 把 display 模块的启动分成两个部分，前一部分在 core components 启动之前启动，
+		// 后一部分在 core components 启动之后启动。
+		err = display.Start()
+		if err != nil {
+			logger.Warning("start display part1 failed:", err)
+		}
+	}
+
 	if err != nil {
 		logger.Warning(err)
 	}
@@ -130,6 +152,10 @@ func main() {
 
 func doSetLogLevel(level log.Priority) {
 	logger.SetLogLevel(level)
-	display.SetLogLevel(level)
+	if !_useWayland {
+		display.SetLogLevel(level)
+	} else {
+		wl_display.SetLogLevel(level)
+	}
 	watchdog.SetLogLevel(level)
 }
