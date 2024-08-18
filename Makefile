@@ -2,7 +2,7 @@ PREFIX = /usr
 GOPATH_DIR = gopath
 GOPKG_PREFIX = pkg.deepin.io/dde/startdde
 GOBUILD = go build -v
-
+GOPATH="/usr/share/gocode-gxde/:/usr/share/gocode/:${CURDIR}/${GOPATH_DIR}"
 all: build
 
 prepare:
