@@ -40,7 +40,7 @@ install:
 	install -Dm755 misc/deepin-session ${DESTDIR}${PREFIX}/sbin/deepin-session
 	#install -Dm755 misc/startdde_wayland ${DESTDIR}${PREFIX}/bin/startdde_wayland
 	install -Dm755 fix-xauthority-perm ${DESTDIR}${PREFIX}/sbin/deepin-fix-xauthority-perm
-	install -Dm644 misc/lightdm.conf ${DESTDIR}${PREFIX}/share/lightdm/lightdm.conf.d/60-deepin.conf
+	#install -Dm644 misc/lightdm.conf ${DESTDIR}${PREFIX}/share/lightdm/lightdm.conf.d/60-deepin.conf
 	mkdir -p ${DESTDIR}${PREFIX}/share/startdde/
 	cp -f misc/config/* ${DESTDIR}${PREFIX}/share/startdde/
 	mkdir -p ${DESTDIR}/etc/X11/Xsession.d/
