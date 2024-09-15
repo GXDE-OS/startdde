@@ -1,9 +1,8 @@
-startdde (3.19) UNRELEASED; urgency=medium
+startdde (3.20) UNRELEASED; urgency=medium
 
-  * Non-maintainer upload.
-  * 
+  * Repair lightdm problem
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 18 Aug 2024 11:40:11 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 15 Sep 2024 08:04:15 +0800
 
 startdde (3.18) unstable; urgency=low
 
