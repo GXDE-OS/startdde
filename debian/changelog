@@ -1,8 +1,8 @@
-startdde (3.20gxde1) UNRELEASED; urgency=medium
+startdde (3.20gxde2) UNRELEASED; urgency=medium
 
   * Repair lightdm problem
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 15 Sep 2024 10:59:48 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Fri, 27 Sep 2024 19:00:05 +0800
 
 startdde (3.18) unstable; urgency=low
 
