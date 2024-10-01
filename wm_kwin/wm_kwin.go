@@ -226,7 +226,7 @@ func setCompositingEnabledInKWinRc(enabled bool) error {
 	if err != nil {
 		return err
 	}
-	filename := filepath.Join(dir, "kwinrc")
+	filename := filepath.Join(dir, "deepin-kwinrc")
 	kf := keyfile.NewKeyFile()
 	err = kf.LoadFromFile(filename)
 	if err != nil && !os.IsNotExist(err) {
