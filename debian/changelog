@@ -1,8 +1,9 @@
-startdde (3.21) UNRELEASED; urgency=medium
+startdde (3.22) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
+  * 调整入口名称
 
- -- gfdgd_xi <3025613752@qq.com>  Tue, 01 Oct 2024 10:35:36 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Mon, 07 Oct 2024 22:31:16 +0800
 
 startdde (3.18) unstable; urgency=low
 
