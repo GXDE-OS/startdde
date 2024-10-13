@@ -49,5 +49,8 @@ install:
 clean:
 	-rm -rf ${GOPATH_DIR}
 	-rm -f startdde
+	-rm -rf obj-x86_64-linux-gnu/
+	-rm -rf misc/config/auto_launch.json
+	-rm -rf fix-xauthority-perm
 
 rebuild: clean build
