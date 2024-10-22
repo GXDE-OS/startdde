@@ -4,6 +4,8 @@
 Startdde is used for launching DDE components and invoking
 user's custom applications which compliant with xdg autostart specification.
 
+It is now forked and maintained by GXDE. You should NOT install this on Deepin
+
 ## Dependencies
 
 ### Build dependencies
