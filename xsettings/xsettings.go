@@ -200,7 +200,7 @@ func (m *XSManager) handleGSettingsChanged() {
 		case "xft-dpi":
 			return
 		case gsKeyScaleFactor:
-			m.updateDPI()
+			// m.updateDPI()
 			return
 		case "gtk-cursor-theme-name":
 			updateXResources(xresourceInfos{
