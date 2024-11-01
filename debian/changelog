@@ -1,6 +1,7 @@
-startdde (3.21) UNRELEASED; urgency=medium
+startdde (3.21.1) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
+  * fix: 修复缩放立即生效的问题 
 
  -- gfdgd_xi <3025613752@qq.com>  Tue, 01 Oct 2024 10:35:36 +0800
 
