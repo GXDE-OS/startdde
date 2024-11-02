@@ -2,8 +2,8 @@
 #
 # LightDM wrapper to run around X sessions.
 
-if [[ "$1" != "/usr/bin/startdde" ]] && [[ "$1" != "/usr/bin/startdde_wayland" ]]; then
-	exec /usr/sbin/lightdm-session $@
+if [[ "$1" != "/usr/bin/startdde" ]] && [[ "$1" != "/usr/bin/startgxde_wayland" ]]; then
+	exec /etc/X11/Xsession $@
 fi
 
 echo "Running X session wrapper"
