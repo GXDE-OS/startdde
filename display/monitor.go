@@ -20,11 +20,15 @@
 package display
 
 import (
+	//"os/exec"
 	"encoding/json"
 	"fmt"
 	"sort"
 	"strings"
 	"sync"
+	"math"
+	//"log"
+	"strconv"
 
 	"github.com/linuxdeepin/go-x11-client/ext/randr"
 	"pkg.deepin.io/dde/api/drandr"
@@ -95,8 +99,6 @@ func (m *MonitorInfo) generateCommandline(primary string, auto bool) string {
 	}
 	cmd += fmt.Sprintf(" --mode %dx%d", m.cfg.Width, m.cfg.Height)
 	cmd += fmt.Sprintf(" --pos %dx%d", m.cfg.X, m.cfg.Y)
-	// NOTE: do not set rate, because set rate may cause xrandr to report
-	// configure crtc failed error
 	var ro = "normal"
 	switch m.cfg.Rotation {
 	case randr.RotationRotate90:
@@ -118,6 +120,11 @@ func (m *MonitorInfo) generateCommandline(primary string, auto bool) string {
 		re = "xy"
 	}
 	cmd += " --reflect " + re
+	// 现在可以直接在此设置刷新率
+	// 之前的注释：
+	// NOTE: do not set rate, because set rate may cause xrandr to report
+	// configure crtc failed error
+	cmd += " --rate " + strconv.Itoa(int(math.Round(m.cfg.RefreshRate)))
 	return cmd
 }
 
@@ -160,6 +167,7 @@ func (m *MonitorInfo) doSetMode(v uint32) error {
 	m.setPropWidth(w)
 	m.setPropHeight(h)
 	m.setPropRefreshRate(info.Rate)
+	//m.doSetRefreshRate(info.Rate)
 	return nil
 }
 
