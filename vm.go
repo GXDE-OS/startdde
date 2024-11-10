@@ -33,15 +33,25 @@ import (
 )
 
 func tryMatchVM() {
+	// 判断是否为虚拟机或者 Termux/PRoot ，如果都不是则不继续执行
 	inVM, err := isInVM()
+
 	if err != nil {
 		logger.Warning("launchWindowManager detect VM failed:", err)
 		return
 	}
+	inTermux, err := isInTermux()
 
-	if !inVM {
+	if err != nil {
+		logger.Warning("launchWindowManager detect Termux failed:", err)
 		return
 	}
+
+	if !inVM && !inTermux {
+		return
+	}
+
+
 
 	logger.Debug("launchWindowManager in VM")
 	cfgFile := filepath.Join(basedir.GetUserConfigDir(), "deepin", "deepin-wm-switcher", "config.json")
@@ -132,6 +142,18 @@ func correctVMResolution() {
 
 func isInVM() (bool, error) {
 	cmd := exec.Command("systemd-detect-virt", "-v", "-q")
+	err := cmd.Start()
+	if err != nil {
+		return false, err
+	}
+
+	err = cmd.Wait()
+	return err == nil, nil
+}
+
+func isInTermux() (bool, error) {
+	// 判断是否有 termux-chroot 命令，如果有则为 Termux/Proot
+	cmd := exec.Command("which", "termux-chroot")
 	err := cmd.Start()
 	if err != nil {
 		return false, err
