@@ -1,12 +1,12 @@
-startdde (3.21.4) UNRELEASED; urgency=medium
+startdde (3.21.5) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
   * fix: 修复缩放立即生效的问题 
   * 修复 GXDE Wayland 入口无法进入的问题
   * 支持设置刷新率
-  * 在termux下也提示建议关闭窗口特效(https://gitee.com/GXDE-OS/GXDE/issues/IAVDUG)
+  * 在termux和小小电脑下也提示建议关闭窗口特效(https://gitee.com/GXDE-OS/GXDE/issues/IAVDUG)
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 10 Nov 2024 12:39:30 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Mon, 11 Nov 2024 22:16:40 +0800
 
 startdde (3.18) unstable; urgency=low
 

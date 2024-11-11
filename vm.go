@@ -47,7 +47,14 @@ func tryMatchVM() {
 		return
 	}
 
-	if !inVM && !inTermux {
+	isInTinyComputer, err := isInTinyComputer()
+
+	if err != nil {
+		logger.Warning("launchWindowManager detect Tiny Computer failed:", err)
+		return
+	}
+
+	if !inVM && !inTermux && !isInTinyComputer {
 		return
 	}
 
@@ -154,6 +161,18 @@ func isInVM() (bool, error) {
 func isInTermux() (bool, error) {
 	// 判断是否有 termux-chroot 命令，如果有则为 Termux/Proot
 	cmd := exec.Command("which", "termux-chroot")
+	err := cmd.Start()
+	if err != nil {
+		return false, err
+	}
+
+	err = cmd.Wait()
+	return err == nil, nil
+}
+
+func isInTinyComputer() (bool, error) {
+    // 判断是否有 /storage 目录，如果有则为小小电脑
+	cmd := exec.Command("stat", "/storage")
 	err := cmd.Start()
 	if err != nil {
 		return false, err
