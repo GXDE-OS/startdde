@@ -33,7 +33,8 @@ Depends: ${shlibs:Depends},
  libgnome-keyring0,
  libxfixes3,
  libxcursor1,
- lightdm
+ lightdm,
+ xdg-desktop-portal-gxde
 Recommends: dde-qt5integration
 Conflicts: deepin-session, deepin-wm-switcher
 Breaks: startdde(<= 2.91.1)
