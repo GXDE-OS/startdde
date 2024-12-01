@@ -1,4 +1,4 @@
-startdde (3.21.8) UNRELEASED; urgency=medium
+startdde (3.21.9) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
   * fix: 修复缩放立即生效的问题 
@@ -7,8 +7,9 @@ startdde (3.21.8) UNRELEASED; urgency=medium
   * 在termux和小小电脑下也提示建议关闭窗口特效(https://gitee.com/GXDE-OS/GXDE/issues/IAVDUG)
   * 依赖 xdg-desktop-portal-gxde 以正确处理 gtk 文件选择窗口
   * riscv64 和 loong64 使用 gxde-kwin
+  * 
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 28 Nov 2024 22:47:43 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 01 Dec 2024 08:10:37 +0800
 
 startdde (3.18) unstable; urgency=low
 
