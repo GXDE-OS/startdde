@@ -47,14 +47,14 @@ func tryMatchVM() {
 		return
 	}
 
-	isInTinyComputer, err := isInTinyComputer()
+	isInChroot, err := isInChroot()
 
 	if err != nil {
-		logger.Warning("launchWindowManager detect Tiny Computer failed:", err)
+		logger.Warning("launchWindowManager detect Chroot failed:", err)
 		return
 	}
 
-	if !inVM && !inTermux && !isInTinyComputer {
+	if !inVM && !inTermux && !isInChroot {
 		return
 	}
 
@@ -170,14 +170,15 @@ func isInTermux() (bool, error) {
 	return err == nil, nil
 }
 
-func isInTinyComputer() (bool, error) {
-    // 判断是否有 /storage 目录，如果有则为小小电脑
-	cmd := exec.Command("stat", "/storage")
-	err := cmd.Start()
-	if err != nil {
-		return false, err
-	}
+func isInChroot() (bool, error) {
+    // 执行 readlink 命令获取进程根目录的真实路径
+    cmd := exec.Command("readlink", "-f", "/proc/self/root")
+    output, err := cmd.Output()
+    if err != nil {
+        return false, err // 命令执行失败时返回错误
+    }
 
-	err = cmd.Wait()
-	return err == nil, nil
+    // 清理输出并判断路径
+    realRoot := strings.TrimSpace(string(output))
+    return realRoot != "/", nil // 路径不是 "/" 时返回 true
 }
