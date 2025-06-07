@@ -9,6 +9,7 @@ startdde (3.21.12) UNRELEASED; urgency=medium
   * 不再强制 riscv64 和 loong64 使用 gxde-kwin
   * 优化小小电脑的判断逻辑
   * 修改 dde-dock、dde-desktop 的应用自启动为 gxde-dock、gxde-desktop-panel
+  * 修改 dde-file-manager 为 gxde-file-manager
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Jun 2025 20:57:00 +0800
 

@@ -33,7 +33,7 @@
           "Args": []
         },
         {
-          "Command": "/usr/bin/dde-file-manager",
+          "Command": "/usr/bin/gxde-file-manager",
           "Wait": false,
           "Args": ["-d"]
         }

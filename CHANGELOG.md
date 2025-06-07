@@ -140,7 +140,7 @@
 *   fix(display): set brightness error typo
 *   chore: no import lib xgb/proto
 *   chore: use go-x11-client
-*   chore: do not auto launch dde-file-manager on x86 arch
+*   chore: do not auto launch gxde-file-manager on x86 arch
 *   perf(swapsched): use less cpu when swapsched is not really enabled
 
 ## [3.1.33] - 2018-06-13
