@@ -1,7 +1,7 @@
 Source: startdde
 Section: admin
 Priority: extra
-Maintainer: Deepin Packages Builder <packages@deepin.com>
+Maintainer: gfdgd xi <3025613752@qq.com>
 Build-Depends: debhelper (>= 9), pkg-config, golang-go,
  golang-dlib-dev (>> 1.8.0+),
  golang-github-linuxdeepin-go-x11-client-dev (>= 0.0.4),
@@ -27,7 +27,7 @@ Depends: ${shlibs:Depends},
  libpam-gnome-keyring,
  gvfs-common,
  dde-kwin | deepin-wm | deepin-metacity | gxde-kwin,
- deepin-desktop-schemas (>= 3.2.4),
+ gxde-desktop-schemas (>= 3.2.4),
  dde-api,
  libgnome-keyring0,
  libxfixes3,
