@@ -20,7 +20,7 @@
 package watchdog
 
 const (
-	ddeDesktopTaskName    = "dde-desktop"
+	ddeDesktopTaskName    = "gxde-desktop-panel"
 	ddeDesktopServiceName = "com.deepin.dde.desktop"
 )
 
