@@ -3,7 +3,7 @@ Section: admin
 Priority: extra
 Maintainer: gfdgd xi <3025613752@qq.com>
 Build-Depends: debhelper (>= 9), pkg-config, golang-go,
- golang-dlib-dev (>> 1.8.0+),
+ golang-dlib-dev (>> 1.8.0+) | golang-github-linuxdeepin-go-lib-dev,
  golang-github-linuxdeepin-go-x11-client-dev (>= 0.0.4),
  gxde-api-dev(>> 3.16.0+),
  golang-github-linuxdeepin-go-dbus-factory-dev (>> 0.6.0+),
