@@ -1,4 +1,4 @@
-startdde (3.21.15) UNRELEASED; urgency=medium
+startdde (3.21.16) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
   * fix: 修复缩放立即生效的问题 
@@ -13,8 +13,9 @@ startdde (3.21.15) UNRELEASED; urgency=medium
   * 修复桌面无法开启的问题
   * 修复 deepin-kwin6 关闭特效模式设置无法保存的 bug
   * dde-api=>gxde-api
+  * dde-daemon=>deepin-daemon
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 11:23:05 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 12:15:59 +0800
 
 startdde (3.18) unstable; urgency=low
 
