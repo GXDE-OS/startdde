@@ -22,7 +22,7 @@ Architecture: any
 Provides: x-session-manager
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- dde-daemon (>> 3.24.1+),
+ deepin-daemon (>> 3.24.1+),
  gnome-keyring,
  libpam-gnome-keyring,
  gvfs-common,
