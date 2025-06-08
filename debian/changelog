@@ -1,4 +1,4 @@
-startdde (3.21.17) UNRELEASED; urgency=medium
+startgxde (4.0.0) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
   * fix: 修复缩放立即生效的问题 
@@ -15,10 +15,11 @@ startdde (3.21.17) UNRELEASED; urgency=medium
   * dde-api=>gxde-api
   * dde-daemon=>deepin-daemon
   * dde-polkit-agent=>gxde-polkit-agent
+  * startdde=>startgxde
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 13:31:41 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Mon, 09 Jun 2025 07:36:35 +0800
 
-startdde (3.18) unstable; urgency=low
+startgxde (3.18) unstable; urgency=low
 
   * ['Autobuild release-candidate: 564aa01945d37d687adfdc2d797ea7ca2075dd11']
 

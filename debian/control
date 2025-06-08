@@ -1,4 +1,4 @@
-Source: startdde
+Source: startgxde
 Section: admin
 Priority: extra
 Maintainer: gfdgd xi <3025613752@qq.com>
@@ -15,11 +15,12 @@ Build-Depends: debhelper (>= 9), pkg-config, golang-go,
  jq,
  golang-gxde-dev
 Standards-Version: 3.9.5
-Homepage: http://github.com/linuxdeepin/startdde
+Homepage: http://github.com/GXDE-OS/startgxde
 
-Package: startdde
+Package: startgxde
+Replaces: startdde
 Architecture: any
-Provides: x-session-manager
+Provides: x-session-manager, startdde
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  deepin-daemon (>> 3.24.1+),
@@ -34,8 +35,8 @@ Depends: ${shlibs:Depends},
  libxcursor1,
  lightdm,
  xdg-desktop-portal-gxde
-Recommends: dde-qt5integration
-Conflicts: deepin-session, deepin-wm-switcher
+Recommends: gxde-qt5integration
+Conflicts: deepin-session, deepin-wm-switcher, startdde
 Breaks: startdde(<= 2.91.1)
 Description: start deepin desktop environment
  starter of deepin desktop environment.
