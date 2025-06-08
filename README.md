@@ -1,4 +1,4 @@
-# Startdde
+# Startgxde
 
 **Description**:
 Startdde is used for launching DDE components and invoking
@@ -37,7 +37,7 @@ It is now forked and maintained by GXDE. You should NOT install this on Deepin
 
 Install prerequisites
 ```
-$ sudo apt-get build-dep startdde
+$ sudo apt-get build-dep startgxde
 ```
 
 Build
@@ -53,7 +53,7 @@ $ sudo make install
 generate package files and install Startdde with it
 ```
 $ debuild -uc -us ...
-$ sudo dpkg -i ../startdde-*deb
+$ sudo dpkg -i ../startgxde-*deb
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ $ sudo dpkg -i ../startdde-*deb
 Run Startdde with the command below
 
 ```
-Usage of /usr/bin/startdde:
+Usage of /usr/bin/startgxde:
   -d=false: debug
 ```
 
@@ -69,7 +69,7 @@ Usage of /usr/bin/startdde:
 ### Directly run without display manager
 
 ```
-$ echo "dbus-launch --exit-with-session /usr/bin/startdde" > ~/.xinitrc
+$ echo "dbus-launch --exit-with-session /usr/bin/startgxde" > ~/.xinitrc
 $ startx
 ```
 
@@ -83,7 +83,7 @@ cat /usr/share/xsessions/deepin.desktop
 [Desktop Entry]
 Name=Deepin
 Comment=Deepin Desktop Environment
-Exec=/usr/bin/startdde
+Exec=/usr/bin/startgxde
 ```
 
 2. Using DisplayManager like, gdm, kdm or lightdm to startup Startdde
