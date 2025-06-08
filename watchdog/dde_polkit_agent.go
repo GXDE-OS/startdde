@@ -33,15 +33,15 @@ import (
 
 const (
 	ddePolkitAgentTaskName = "dde-polkit-agent"
-	ddePolkitAgentCommand  = "/usr/lib/polkit-1-dde/dde-polkit-agent"
+	ddePolkitAgentCommand  = "/usr/lib/polkit-1-dde/gxde-polkit-agent"
 )
 
 func isDdePolkitAgentRunning() (bool, error) {
 	if !utils.IsFileExist(ddePolkitAgentCommand) {
-		return false, errors.New("dde-polkit-agent bin not exist")
+		return false, errors.New("gxde-polkit-agent bin not exist")
 	}
 
-	pidFile := filepath.Join(basedir.GetUserCacheDir(), "deepin", "dde-polkit-agent", "pid")
+	pidFile := filepath.Join(basedir.GetUserCacheDir(), "deepin", "gxde-polkit-agent", "pid")
 	pidFileContent, err := ioutil.ReadFile(pidFile)
 	if err != nil {
 		return false, nil
@@ -66,13 +66,13 @@ func launchDdePolkitAgent() error {
 	var cmd = exec.Command(ddePolkitAgentCommand)
 	err := cmd.Start()
 	if err != nil {
-		logger.Warning("failed to start dde-polkit-agent:", err)
+		logger.Warning("failed to start gxde-polkit-agent:", err)
 		return err
 	}
 	go func() {
 		err := cmd.Wait()
 		if err != nil {
-			logger.Warning("dde-polkit-agent exit with error:", err)
+			logger.Warning("gxde-polkit-agent exit with error:", err)
 		}
 	}()
 	return nil

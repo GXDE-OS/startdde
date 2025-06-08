@@ -17,7 +17,7 @@ It is now forked and maintained by GXDE. You should NOT install this on Deepin
 - [go-fsnotify](https://github.com/howeyc/fsnotify)
 - [dde-dbus-factory](https://github.com/linuxdeepin/dbus-factory)
 - [go-gir-generator](https://github.com/linuxdeepin/go-gir-generator)
-- [dde-api](https://github.com/linuxdeepin/dde-api)
+- [gxde-api](https://github.com/linuxdeepin/gxde-api)
 - [go-x11-client](https://github.com/linuxdeepin/go-x11-client)
 - libgnome-keyring
 - libxfixes
