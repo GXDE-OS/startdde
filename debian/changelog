@@ -1,4 +1,4 @@
-startgxde (4.0.1) UNRELEASED; urgency=medium
+startgxde (4.0.1-1) UNRELEASED; urgency=medium
 
   * 修复控制中心切换启用/禁用特效后重启会丢失设置的问题
   * fix: 修复缩放立即生效的问题 
