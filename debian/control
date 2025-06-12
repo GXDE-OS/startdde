@@ -36,7 +36,7 @@ Depends: ${shlibs:Depends},
  lightdm,
  xdg-desktop-portal-gxde
 Recommends: gxde-qt5integration, gxde-desktop
-Conflicts: deepin-session, deepin-wm-switcher, startdde
+Conflicts: deepin-session, deepin-wm-switcher, startdde (>> 4.0.1-1)
 Breaks: startdde(<= 2.91.1)
 Description: start deepin desktop environment
  starter of deepin desktop environment.
